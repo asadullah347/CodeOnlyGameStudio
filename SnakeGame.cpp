@@ -51,6 +51,12 @@ void Draw()
             if (j == 0)
                 cout << "#"; // Left wall
 
+                if(i = x && j == y)
+                    cout << "O"; // Snake head
+                else if (i == fruitX && j == fruitY)
+                    cout << "F"; // Fruit
+                else
+
                 cout << " "; // empty space
 
             if (j == width - 1)
