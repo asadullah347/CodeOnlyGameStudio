@@ -1,4 +1,6 @@
 #include <iostream>
+#include <conio.h>
+#include <cstdlib>
 using namespace std;
 
 
@@ -39,7 +41,7 @@ void Draw()
     system("cls"); // to clear the console
 
 
-    for (int i = 0; i < width+2; i++)   // Top walls
+    for (int i = 0; i < width + 2; i++)   // Top walls
         cout << "#";
     cout << endl;
 
@@ -51,9 +53,9 @@ void Draw()
             if (j == 0)
                 cout << "#"; // Left wall
 
-                if(i = x && j == y)
+                if(i == y && j == x)
                     cout << "O"; // Snake head
-                else if (i == fruitX && j == fruitY)
+                else if (i == fruitY && j == fruitX)
                     cout << "F"; // Fruit
                 else
 
@@ -69,15 +71,68 @@ void Draw()
     for (int i = 0; i < width+2; i++)   // Bottom walls
         cout << "#";
     cout << endl;
+
+    // Display score
+    cout << "Score: " << score << endl;
 }
 
 void Input()
 {
-    
+    if(_kbhit())
+    {
+        switch (_getch())
+        {
+        case 'a':
+            dir = LEFT;
+            break;
+        case 'd':
+            dir = RIGHT;
+            break;
+        case 'w':
+            dir = UP;
+            break;
+        case 's':
+            dir = DOWN;
+            break;
+        case 'x':
+            gameOver = true;
+            break;
+        default:
+            break;
+        }
+    }
 }
 
 void Logic()
 {
+    switch (dir)
+    {
+    case LEFT:
+        x--;
+        break;
+    case RIGHT:
+        x++;
+        break;
+    case UP:
+        y--;
+        break;
+    case DOWN:
+        y++;
+        break;
+    default:
+        break;
+    }
+
+    // Collision with walls
+    if (x >= width || x < 0 || y >= height || y < 0)
+        gameOver = true;
+    // Collision with fruit
+    if (x == fruitX && y == fruitY)
+    {
+        score += 10;
+        fruitX = rand() % width;
+        fruitY = rand() % height;
+    }
     
 }
 
