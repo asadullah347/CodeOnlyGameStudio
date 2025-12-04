@@ -1,0 +1,3 @@
+﻿  오목게임만들기-격자좌표변환.cpp
+C:\Users\MSI\Downloads\오목게임 만들기\오목게임만들기-격자좌표변환\오목게임만들기-격자좌표변환.cpp(144,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  오목게임만들기-격자좌표변환.vcxproj -> C:\Users\MSI\Downloads\오목게임 만들기\x64\Debug\오목게임만들기-격자좌표변환.exe

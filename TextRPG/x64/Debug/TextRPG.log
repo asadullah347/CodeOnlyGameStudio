@@ -1,0 +1,3 @@
+﻿  TextRPG.cpp
+C:\Users\MSI\Downloads\TextRPG\TextRPG.cpp(110,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  TextRPG.vcxproj -> C:\Users\MSI\Downloads\TextRPG\x64\Debug\TextRPG.exe
